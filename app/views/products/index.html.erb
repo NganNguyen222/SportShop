@@ -1,0 +1,96 @@
+<h1 class="sport-store-title"> <%= t "GN Sport Store" %></h1>
+
+<div class="auth-links">
+  <%= link_to "New product", new_product_path, class: "new-product-link" if authenticated? %>
+  <%= link_to "Login", new_session_path unless authenticated? %>
+</div>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <div class="product-button">
+      <%= link_to product.name, product, class: "btn" %>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  /* Tiêu đề Sport Store */
+  .sport-store-title {
+    color: white; /* Màu chữ */
+    text-align: center; /* Căn giữa */
+    font-size: 4rem; /* Kích thước chữ lớn hơn */
+    font-family: 'Arial Black', sans-serif; /* Đổi kiểu chữ (Arial Black hoặc fallback là sans-serif) */
+    letter-spacing: 2px; /* Khoảng cách giữa các chữ */
+    margin-bottom: 20px; /* Khoảng cách bên dưới tiêu đề */
+  }
+
+  /* Căn giữa toàn bộ trang */
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #1a12c2e9, #c471ed, #f64f59);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+  }
+
+  /* Dàn các link "New product" và "Login" thành hàng ngang */
+  .auth-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .auth-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .new-product-link {
+    color: black;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+  }
+
+  .new-product-link:hover {
+    background-color: lightgray;
+  }
+
+  #products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .product-button .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #99FFFF;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+
+  .product-button .btn:hover {
+    background-color: #CC99FF;
+  }
+</style>

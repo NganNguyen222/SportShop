@@ -1,0 +1,119 @@
+<div class="product-page-container">
+  <p class="back-btn">
+    <%= link_to "Back", products_path, class: "btn btn-primary" %>
+  </p>
+
+  <section class="product">
+    <div class="product-image">
+      <%= image_tag @product.featured_image if @product.featured_image.attached? %>
+    </div>
+
+    <section class="product-info">
+      <% cache @product do %>
+        <h1 class="product-title"><%= @product.name %></h1>
+        <p class="product-description"><%= @product.description %></p>
+      <% end %>
+
+      <%= render "inventory", product: @product %>
+
+      <% if authenticated? %>
+        <div class="action-buttons">
+          <%= link_to "Edit", edit_product_path(@product), class: "btn btn-secondary edit-btn" %>
+          <%= button_to "Delete", @product, method: :delete, class: "btn btn-danger delete-btn", data: { turbo_confirm: "Are you sure?" } %>
+        </div>
+      <% end %>
+    </section>
+  </section>
+</div>
+
+<style>
+  /* Toàn bộ trang */
+  .product-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    min-height: 100vh; /* Chiều cao chiếm toàn bộ màn hình */
+    background: linear-gradient(120deg, #d4fc79, #96e6a1); /* Nền chuyển sắc */
+    padding: 20px; /* Khoảng cách bên trong */
+  }
+
+  /* Nút Back */
+  .back-btn {
+    margin-bottom: 20px; /* Thêm khoảng cách dưới nút Back */
+    text-align: center; /* Căn giữa nút */
+  }
+
+  .btn {
+    padding: 10px 20px; /* Padding cho nút */
+    font-size: 1em; /* Kích thước chữ */
+    border-radius: 8px; /* Bo góc nút */
+    text-decoration: none; /* Xóa gạch chân */
+    color: #fff; /* Màu chữ */
+    display: inline-block; /* Định dạng inline-block */
+    margin: 5px; /* Khoảng cách giữa các nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+  }
+
+  .btn-primary {
+    background-color: #007bff; /* Màu xanh cho nút Back */
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3; /* Đậm hơn khi hover */
+  }
+
+  .btn-secondary {
+    background-color: #6c757d; /* Màu xám cho nút Edit */
+  }
+
+  .btn-secondary:hover {
+    background-color: #5a6268; /* Đậm hơn khi hover */
+  }
+
+  .btn-danger {
+    background-color: #dc3545; /* Màu đỏ cho nút Delete */
+  }
+
+  .btn-danger:hover {
+    background-color: #c82333; /* Đậm hơn khi hover */
+  }
+
+  /* Sản phẩm */
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung */
+    text-align: center; /* Căn giữa text */
+    width: 80%; /* Giới hạn chiều rộng */
+    max-width: 800px; /* Chiều rộng tối đa */
+    background: #fff; /* Nền trắng */
+    padding: 20px; /* Padding bên trong */
+    border-radius: 12px; /* Bo tròn góc */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+  }
+
+  .product-image img {
+    max-width: 100%; /* Ảnh chiếm tối đa chiều rộng container */
+    border-radius: 8px; /* Bo góc ảnh */
+    margin-bottom: 15px; /* Khoảng cách dưới ảnh */
+  }
+
+  .product-title {
+    font-size: 2em; /* Kích thước chữ lớn cho tên sản phẩm */
+    color: #333; /* Màu chữ */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+  }
+
+  .product-description {
+    font-size: 1.2em; /* Kích thước chữ mô tả */
+    color: #666; /* Màu chữ xám */
+    margin-bottom: 20px; /* Khoảng cách dưới mô tả */
+  }
+
+  /* Nút hành động (Edit, Delete) */
+  .action-buttons {
+    display: flex;
+    justify-content: center; /* Căn giữa các nút */
+  }
+</style>

@@ -1,0 +1,59 @@
+<div class="form-container">
+  <%= render "form", product: @product %>
+  <%= link_to "Cancel", products_path, class: "btn btn-secondary cancel-btn" %>
+</div>
+
+<style>
+  .new-product-title {
+    color: #222; /* Màu chữ đậm hơn */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px; /* Tăng khoảng cách dưới tiêu đề */
+    font-size: 1.8em; /* Tăng kích thước chữ */
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Chiều cao tự động để tránh dư thừa không gian */
+    width: 70%; /* Tăng chiều rộng của form */
+    margin: 0 auto; /* Căn giữa container */
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    padding: 30px; /* Tăng padding cho khoảng cách rộng rãi hơn */
+    border-radius: 12px; /* Tăng độ bo tròn */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+  }
+
+  /* Định dạng cho các phần tử trong form */
+  .form-container form {
+    width: 100%; /* Form chiếm toàn bộ chiều rộng của container */
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container select {
+    width: 100%; /* Trường nhập liệu chiếm toàn bộ chiều rộng */
+    margin-bottom: 15px; /* Tăng khoảng cách giữa các trường */
+    padding: 12px; /* Tăng padding để dễ nhấn hơn */
+    border: 1px solid #ccc; /* Thêm viền */
+    border-radius: 5px; /* Bo tròn viền */
+    font-size: 1em; /* Tăng kích thước chữ */
+  }
+
+  /* Định dạng cho nút Cancel */
+  .cancel-btn {
+    margin-top: 20px;
+    background-color: #0044cc; /* Màu xanh dương đậm */
+    color: white; /* Màu chữ */
+    padding: 8px 16px; /* Padding giữ nguyên */
+    border-radius: 5px; /* Bo tròn viền giữ nguyên */
+    font-size: 1em; /* Kích thước chữ giữ nguyên */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+  }
+
+  .cancel-btn:hover {
+    background-color: #002a80; /* Màu xanh dương tối hơn khi hover */
+  }
+</style>

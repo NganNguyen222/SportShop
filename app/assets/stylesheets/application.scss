@@ -1,0 +1,27 @@
+.notice {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+  }
+  
+  .home-link {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: purple; /* Màu chữ */
+    font-size: 18px; /* Kích thước chữ */
+  }
+  
+  .logout-button {
+    background-color: #f0f0f0; /* Màu nền */
+    border: 1px solid #ccc; /* Viền */
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    cursor: pointer; /* Con trỏ chuột */
+  }
+  
+  .logout-button:hover {
+    background-color: #e0e0e0; /* Màu khi hover */
+  }
+  /*
+ *= require bootstrap
+ */
+
+  

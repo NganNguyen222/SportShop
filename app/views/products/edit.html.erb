@@ -1,0 +1,85 @@
+<div class="edit-product-container">
+  <h1 class="text-center my-4">Edit Product</h1>
+
+  <div class="form-container">
+    <%= render "form", product: @product %>
+  </div>
+
+  <div class="action-buttons">
+    <%= link_to "Cancel", @product, class: "btn btn-secondary cancel-btn" %>
+  </div>
+</div>
+
+<style>
+  /* Định dạng tiêu đề */
+  .text-center {
+    text-align: center; /* Căn giữa tiêu đề */
+    font-size: 2em; /* Tăng kích thước chữ */
+    font-weight: bold; /* Chữ in đậm */
+    color: #333; /* Màu chữ tối hơn */
+    margin-bottom: 20px; /* Thêm khoảng cách bên dưới */
+  }
+
+  /* Container chính */
+  .edit-product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    min-height: 100vh; /* Chiều cao chiếm toàn bộ màn hình */
+    background: linear-gradient(120deg, #d4fc79, #96e6a1); /* Màu nền chuyển sắc */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+  }
+
+  /* Container cho form */
+  .form-container {
+    width: 50%; /* Chiều rộng form là 50% màn hình */
+    max-width: 600px; /* Chiều rộng tối đa */
+    background: #fff; /* Nền trắng cho form */
+    padding: 30px; /* Khoảng cách bên trong form */
+    border-radius: 12px; /* Bo tròn góc */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  }
+
+  /* Định dạng các nút */
+  .action-buttons {
+    margin-top: 20px; /* Khoảng cách trên nút */
+    text-align: center; /* Căn giữa nút */
+  }
+
+  .cancel-btn {
+    background-color: #000055; /* Màu nền nút */
+    color: #fff; /* Màu chữ nút */
+    padding: 10px 20px; /* Padding nút */
+    font-size: 1em; /* Kích thước chữ */
+    border-radius: 8px; /* Bo tròn nút */
+    text-decoration: none; /* Xóa gạch chân */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+  }
+
+  .cancel-btn:hover {
+    background-color: #333366; /* Màu nền khi hover */
+  }
+
+  /* Form input style */
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%; /* Chiều rộng full */
+    padding: 12px; /* Padding bên trong */
+    margin-bottom: 15px; /* Khoảng cách giữa các trường */
+    border: 1px solid #ccc; /* Viền màu xám */
+    border-radius: 5px; /* Bo góc */
+    font-size: 1em; /* Kích thước chữ */
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #96e6a1; /* Màu viền khi focus */
+    outline: none; /* Xóa viền mặc định */
+    box-shadow: 0 0 5px rgba(150, 230, 161, 0.5); /* Hiệu ứng sáng viền */
+  }
+</style>
