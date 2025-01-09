@@ -2,22 +2,29 @@
   "name": "shop",
   "version": "1.0.0",
   "description": "package name: (shop) my-shop-project",
-  "main": ".0) 1.0.0",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "postcss src/styles.css -o dist/styles.css",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "t repository:"
+    "url": "https://github.com/NganNguyen222/SportShop.git"
   },
   "keywords": [
-    "SC)",
-    "ISC"
+    "shop",
+    "project"
   ],
-  "author": "package name: (shop)",
-  "license": "ISC"
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.17"
+  }
 }
