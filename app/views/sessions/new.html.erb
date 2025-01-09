@@ -1,23 +1,23 @@
 <%= tag.div(flash[:alert], style: "color:red; text-align:center; margin-bottom: 20px;") if flash[:alert] %>
 <%= tag.div(flash[:notice], style: "color:green; text-align:center; margin-bottom: 20px;") if flash[:notice] %>
 
-<div class="form-container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <div class="form-box" style="padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; width: 300px;">
+<div class="form-container" style="display: flex; justify-content: center; align-items: flex-start; height: 100vh; padding-top: 50px;">
+  <div class="form-box" style="padding: 30px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9; width: 600px;">
     <%= form_with url: session_path do |form| %>
-      <div class="form-field" style="margin-bottom: 15px;">
-        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
+      <div class="form-field" style="margin-bottom: 20px;">
+        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], style: "width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;" %>
       </div>
 
-      <div class="form-field" style="margin-bottom: 15px;">
-        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;" %>
+      <div class="form-field" style="margin-bottom: 20px;">
+        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, style: "width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;" %>
       </div>
 
       <div class="form-submit" style="text-align: center;">
-        <%= form.submit "Sign in", style: "padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" %>
+        <%= form.submit "Sign in", style: "width: 100%; padding: 15px 0; background-color: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px;" %>
       </div>
     <% end %>
 
-    <div class="forgot-password" style="text-align: center; margin-top: 10px;">
+    <div class="forgot-password" style="text-align: center; margin-top: 15px;">
       <%= link_to "Forgot password?", new_password_path, style: "text-decoration: none; color: #007bff;" %>
     </div>
   </div>

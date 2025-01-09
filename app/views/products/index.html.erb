@@ -1,7 +1,7 @@
 <h1 class="sport-store-title"> <%= t "GN Sport Store" %></h1>
 
 <div class="auth-links">
-  <%= link_to "New product", new_product_path, class: "new-product-link" if authenticated? %>
+  <%= link_to "Sản phẩm mới", new_product_path, class: "new-product-link" if authenticated? %>
   <%= link_to "Login", new_session_path unless authenticated? %>
 </div>
 
